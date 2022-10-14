@@ -1,6 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import LoginForm from './login/LoginForm'
+import axios from 'axios';
+import { useEffect } from 'react';
 
 const Home: NextPage = () => {
   return (
@@ -11,7 +13,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1>login</h1>
-      <LoginForm/>
+      <LoginForm />
     </div>
   )
 }
