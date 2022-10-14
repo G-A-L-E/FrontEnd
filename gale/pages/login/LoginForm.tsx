@@ -1,12 +1,12 @@
 import { useForm } from 'react-hook-form';
+import styled from 'styled-components';
 
 export default function LoginForm() {
     type HookFormTypes = {
         id: string;
         pw: string;
     }
-    const { register, watch, handleSubmit, formState: { errors } } = useForm<HookFormTypes>();
-    console.log(watch());
+    const { register , handleSubmit , formState: { errors } } = useForm<HookFormTypes>();
     return (
         <form onSubmit={
             handleSubmit(async (loginData) => await console.log(loginData))
@@ -22,10 +22,12 @@ export default function LoginForm() {
                 type="text"
                 placeholder="ID"
             />
+            <br/>
             <span>
                 {errors.id?.type === "required" && "아이디는 필수입니다"}
                 {errors.id?.type === "minLength" && errors.id.message}
             </span>
+            <br/>
             <input
                 {...register("pw", {
                     required: true,
@@ -41,10 +43,12 @@ export default function LoginForm() {
                 type="password"
                 placeholder="PW"
             />
+            <br/>
             <span>
                 {errors.pw?.type === "required" && "비밀번호는 필수입니다"}
                 {errors.pw?.type === "minLength" && errors.pw.message}
             </span>
+            <br/>
             <input type="submit" />
         </form>
     )
