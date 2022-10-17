@@ -11,14 +11,15 @@ const Wrapper: any = styled.div`
 const WrapperHeader: any = styled.div`
   width: 100%;
   height: 540px;
-  background-color: green;
+  background-color: #f2f2f2;
+  font-size: 100px;
+  text-align: center;
 `
 const WrapperBody: any = styled.div`
   position: relative;
   left: 160px;
   width: 1760px;
   height: 1868px;
-  // background-color: yellow;
   display: flex;
   flex-direction : column;
 `
@@ -26,13 +27,15 @@ const WrapperFooter: any = styled.div`
   position: relative;
   width: 1920px;
   height: 64px;
-  background-color: blue;
+  background-color: #f2f2f2;
+  font-size: 30px;
+  text-align: center;
 `
 const Titles: any = styled.div`
   position: relative;
   height: 24px;
   top: 56px;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
   background-color: #ffffff;
 
   font-family: 'Inter';
@@ -65,8 +68,8 @@ const BodayTitleGridRight: any = styled.div`
     text-align: center
 
     background: #FFFFFF;
-  box-shadow: 1px 2px 13px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 15px;
+    box-shadow: 1px 2px 13px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
 `
 const CardWrap = styled.div`
     width: 250px;
@@ -101,7 +104,7 @@ const SlideWrap = styled.div`
     height: 360px;
     top: 48px;
     margin-bottom: 58px;
-    background-color: red;
+    background-color: #ffffff;
     display: flex;
     flex-direction: row;
 `
@@ -110,9 +113,11 @@ const SlideWrap = styled.div`
 const Home: NextPage = () => {
   return (
     <Wrapper>
-      <WrapperHeader />
+      <WrapperHeader>
+        Header
+      </WrapperHeader>
       <WrapperBody>
-        <Titles>인기 있는 여행지</Titles>
+        <Titles>인기 있는 여행지 🔥</Titles>
         <BodyTitle>
           <BodayTitleGridLeft>
             <CardWrap>
@@ -150,7 +155,7 @@ const Home: NextPage = () => {
             지도
           </BodayTitleGridRight>
         </BodyTitle>
-        <Titles>캠핑러들을 위한 장소</Titles>
+        <Titles>캠핑러들을 위한 장소 🏕️</Titles>
         <SlideWrap>
           <CardWrap>
             <CardImg />
@@ -188,7 +193,7 @@ const Home: NextPage = () => {
             <CardPlace>7</CardPlace>
           </CardWrap>
         </SlideWrap>
-        <Titles>반려가족과 함께 즐길 수 있는 여행지</Titles>
+        <Titles>반려가족과 함께 즐길 수 있는 여행지 🐕</Titles>
         <SlideWrap>
           <CardWrap>
             <CardImg />
@@ -227,7 +232,9 @@ const Home: NextPage = () => {
           </CardWrap>
         </SlideWrap>
       </WrapperBody>
-      <WrapperFooter />
+      <WrapperFooter>
+        Footer
+      </WrapperFooter>
     </Wrapper>
   )
 }
