@@ -10,30 +10,30 @@ const Wrapper: any = styled.div`
 `
 const WrapperHeader: any = styled.div`
   width: 100%;
-  height: 540px;
+  height: 21.6%;
   background-color: #f2f2f2;
   font-size: 100px;
   text-align: center;
 `
 const WrapperBody: any = styled.div`
   position: relative;
-  left: 160px;
-  width: 1760px;
-  height: 1868px;
+  left: 8.33%;
+  width: 91.6%;
+  height: 74.72%;
   display: flex;
   flex-direction : column;
 `
 const WrapperFooter: any = styled.div`
   position: relative;
-  width: 1920px;
-  height: 64px;
+  width: 100%;
+  height: 2.56%;
   background-color: #f2f2f2;
   font-size: 30px;
   text-align: center;
 `
 const Titles: any = styled.div`
   position: relative;
-  height: 24px;
+  height: 1.24%;
   top: 56px;
   margin-bottom: 32px;
   background-color: #ffffff;
@@ -41,15 +41,15 @@ const Titles: any = styled.div`
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 2rem;
+  line-height: 2.4rem;
   letter-spacing: -0.0002em;
 
   color: #2D2D2D;
 `
 const BodyTitle: any = styled.div`
-    width: 1760px;
-    height: 734px;
+    width: 91.6%;
+    height: 41.97%;
     margin-top: 56px;
     display: flex;
     flex-direction: row;
@@ -61,10 +61,10 @@ const BodayTitleGridLeft: any = styled.div`
     flex-wrap: wrap;
 `
 const BodayTitleGridRight: any = styled.div`
-    width: 790px;
+    width: 41%;
     height: 652px;
     background-color: white;
-    font-size: 50px;
+    font-size: 5rem;
     text-align: center
 
     background: #FFFFFF;
@@ -90,13 +90,13 @@ const CardLocal = styled.p`
     height: 12px;
     background-color: #FFFFFF;
     margin-bottom: 8px;
-    font-size: 10px;
+    font-size: 1rem;
 `
 const CardPlace = styled.p`
     position: relative;
     height: 17px;
     background-color: #FFFFFF;
-    font-size: 14px;
+    font-size: 1.4rem;
 `
 const SlideWrap = styled.div`
     position: relative;
