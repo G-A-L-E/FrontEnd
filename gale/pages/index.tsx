@@ -1,5 +1,8 @@
 import type { NextPage } from 'next'
+import { useState } from 'react';
 import styled from 'styled-components';
+import Slide from './components/Slide';
+import Card from './components/Card';
 
 const Wrapper: any = styled.div`
   margin: 0 auto;
@@ -71,33 +74,6 @@ const BodayTitleGridRight: any = styled.div`
     box-shadow: 1px 2px 13px 4px rgba(0, 0, 0, 0.15);
     border-radius: 15px;
 `
-const CardWrap = styled.div`
-    width: 250px;
-    height: 339px;
-    margin-right: 17px;
-    flex-shrink:0;
-`
-const CardImg = styled.div`
-    position: relative;
-    height: 286px;
-
-    background: #ffffff;
-    box-shadow: 1px 2px 13px 4px rgba(0, 0, 0, 0.15);
-    border-radius: 15px;
-`
-const CardLocal = styled.p`
-    position: relative;
-    height: 12px;
-    background-color: #FFFFFF;
-    margin-bottom: 8px;
-    font-size: 1rem;
-`
-const CardPlace = styled.p`
-    position: relative;
-    height: 17px;
-    background-color: #FFFFFF;
-    font-size: 1.4rem;
-`
 const SlideWrap = styled.div`
     position: relative;
     width: 100%;
@@ -107,10 +83,17 @@ const SlideWrap = styled.div`
     background-color: #ffffff;
     display: flex;
     flex-direction: row;
+    transform : translateX();
 `
 
-
 const Home: NextPage = () => {
+  const [sildePx , setSlidePx] = useState(0);
+  const toNext = () =>{
+    if(sildePx > 0){
+      setSlidePx(sildePx + 500);
+      console.log(sildePx);
+    }
+  }
   return (
     <Wrapper>
       <WrapperHeader>
@@ -120,117 +103,23 @@ const Home: NextPage = () => {
         <Titles>인기 있는 여행지 🔥</Titles>
         <BodyTitle>
           <BodayTitleGridLeft>
-            <CardWrap>
-              <CardImg />
-              <CardLocal>1</CardLocal>
-              <CardPlace>1</CardPlace>
-            </CardWrap>
-            <CardWrap>
-              <CardImg />
-              <CardLocal>2</CardLocal>
-              <CardPlace>2</CardPlace>
-            </CardWrap>
-            <CardWrap>
-              <CardImg />
-              <CardLocal>3</CardLocal>
-              <CardPlace>3</CardPlace>
-            </CardWrap>
-            <CardWrap>
-              <CardImg />
-              <CardLocal>4</CardLocal>
-              <CardPlace>4</CardPlace>
-            </CardWrap>
-            <CardWrap>
-              <CardImg />
-              <CardLocal>5</CardLocal>
-              <CardPlace>5</CardPlace>
-            </CardWrap>
-            <CardWrap>
-              <CardImg />
-              <CardLocal>6</CardLocal>
-              <CardPlace>6</CardPlace>
-            </CardWrap>
+            {/* mapData */}
+            <Card/>
+            <Card/>
+            <Card/>
+            <Card/>
+            <Card/>
+            <Card/>
           </BodayTitleGridLeft>
           <BodayTitleGridRight>
             지도
           </BodayTitleGridRight>
         </BodyTitle>
         <Titles>캠핑러들을 위한 장소 🏕️</Titles>
-        <SlideWrap>
-          <CardWrap>
-            <CardImg />
-            <CardLocal>1</CardLocal>
-            <CardPlace>1</CardPlace>
-          </CardWrap>
-          <CardWrap>
-            <CardImg />
-            <CardLocal>2</CardLocal>
-            <CardPlace>2</CardPlace>
-          </CardWrap>
-          <CardWrap>
-            <CardImg />
-            <CardLocal>3</CardLocal>
-            <CardPlace>3</CardPlace>
-          </CardWrap>
-          <CardWrap>
-            <CardImg />
-            <CardLocal>4</CardLocal>
-            <CardPlace>4</CardPlace>
-          </CardWrap>
-          <CardWrap>
-            <CardImg />
-            <CardLocal>5</CardLocal>
-            <CardPlace>5</CardPlace>
-          </CardWrap>
-          <CardWrap>
-            <CardImg />
-            <CardLocal>6</CardLocal>
-            <CardPlace>6</CardPlace>
-          </CardWrap>
-          <CardWrap>
-            <CardImg />
-            <CardLocal>7</CardLocal>
-            <CardPlace>7</CardPlace>
-          </CardWrap>
-        </SlideWrap>
+        <Slide/>
+        <button onClick={()=>toNext()}>{'>>'}</button>
         <Titles>반려가족과 함께 즐길 수 있는 여행지 🐕</Titles>
-        <SlideWrap>
-          <CardWrap>
-            <CardImg />
-            <CardLocal>1</CardLocal>
-            <CardPlace>1</CardPlace>
-          </CardWrap>
-          <CardWrap>
-            <CardImg />
-            <CardLocal>2</CardLocal>
-            <CardPlace>2</CardPlace>
-          </CardWrap>
-          <CardWrap>
-            <CardImg />
-            <CardLocal>3</CardLocal>
-            <CardPlace>3</CardPlace>
-          </CardWrap>
-          <CardWrap>
-            <CardImg />
-            <CardLocal>4</CardLocal>
-            <CardPlace>4</CardPlace>
-          </CardWrap>
-          <CardWrap>
-            <CardImg />
-            <CardLocal>5</CardLocal>
-            <CardPlace>5</CardPlace>
-          </CardWrap>
-          <CardWrap>
-            <CardImg />
-            <CardLocal>6</CardLocal>
-            <CardPlace>6</CardPlace>
-          </CardWrap>
-          <CardWrap>
-            <CardImg />
-            <CardLocal>7</CardLocal>
-            <CardPlace>7</CardPlace>
-          </CardWrap>
-        </SlideWrap>
+        <Slide/>
       </WrapperBody>
       <WrapperFooter>
         Footer
